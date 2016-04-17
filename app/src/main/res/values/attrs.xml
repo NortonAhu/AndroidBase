@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomTopbar">
+        <attr name="customTitle" format="string"/>
+        <attr name="customTitleSize" format="dimension"/>
+        <attr name="customeTitleColor" format="color"/>
+
+        <attr name="leftBtnInfo" format="string"/>
+        <attr name="leftBtnColor" format="color"/>
+        <attr name="leftBackground" format="reference|color"/>
+        <attr name="leftBtnSize" format="dimension"/>
+
+        <attr name="rightBtnInfo" format="string"/>
+        <attr name="rightBtnColor" format="color"/>
+        <attr name="rightBackground" format="reference|color"/>
+        <attr name="rightBtnSize" format="dimension"/>
+
+    </declare-styleable>
+</resources>

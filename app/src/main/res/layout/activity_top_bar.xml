@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.bluecup.hongyu.androidcustomview.ui.TopBarActivity">
+    <com.bluecup.hongyu.androidcustomview.view.TopBarView
+        android:id="@+id/custom_top_view"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        app:customTitle="标题"
+        app:customTitleSize="18sp"
+        app:customeTitleColor="@android:color/holo_red_dark"
+        app:leftBackground="@android:color/holo_blue_bright"
+        app:leftBtnColor="@android:color/white"
+        app:leftBtnInfo="返回"
+        app:rightBackground="@android:color/holo_blue_bright"
+        app:rightBtnColor="@android:color/white"
+        app:rightBtnInfo="前进">
+
+    </com.bluecup.hongyu.androidcustomview.view.TopBarView>
+
+</RelativeLayout>
