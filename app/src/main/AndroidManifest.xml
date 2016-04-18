@@ -15,7 +15,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.TopBarActivity"></activity>
+        <activity android:name=".ui.TopBarActivity" />
+        <activity android:name=".ui.ImageActivity" />
+        <activity android:name=".ui.ColorMatrixActivity"></activity>
     </application>
 
 </manifest>
