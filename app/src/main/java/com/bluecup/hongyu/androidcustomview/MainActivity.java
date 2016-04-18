@@ -10,6 +10,7 @@ import android.widget.ListView;
 
 import com.bluecup.hongyu.androidcustomview.ui.ColorMatrixActivity;
 import com.bluecup.hongyu.androidcustomview.ui.ImageActivity;
+import com.bluecup.hongyu.androidcustomview.ui.PixelsEffectActivity;
 import com.bluecup.hongyu.androidcustomview.ui.TopBarActivity;
 import com.bluecup.hongyu.androidcustomview.view.TopBarView;
 
@@ -23,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         listView = (ListView) findViewById(R.id.listview);
-        listView.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, new String[]{"topBar","图像处理","colorMatrix"}));
+        listView.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, new String[]{"topBar","图像处理","colorMatrix","位图处理"}));
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -37,6 +38,9 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case 2:
                         intent.setClass(MainActivity.this, ColorMatrixActivity.class);
+                        break;
+                    case 3:
+                        intent.setClass(MainActivity.this, PixelsEffectActivity.class);
                         break;
                     default:
                         break;
