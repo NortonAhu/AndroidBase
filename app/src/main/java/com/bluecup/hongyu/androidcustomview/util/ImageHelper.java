@@ -96,6 +96,11 @@ public class ImageHelper {
         return bmp;
     }
 
+    /**
+     * 老照片效果
+     * @param bm
+     * @return
+     */
     public static Bitmap handlePixesEffectOldPhoto(Bitmap bm) {
         int widthPixels = bm.getWidth();
         int heightPixels = bm.getHeight();
@@ -137,6 +142,69 @@ public class ImageHelper {
             newPix[i] = Color.argb(a, r1, g2, b3);
         }
         bmp.setPixels(newPix, 0, widthPixels, 0, 0, widthPixels, heightPixels);
+        return bmp;
+    }
+
+    /**
+     *
+     * ABC 三个点求B点的浮雕效果
+     * B.r = C.r - B.r + 127;
+     * B.g = C.g - B.g + 127;
+     * B.b = C.b - B.b + 127;
+     * @param bm
+     * @return
+     */
+    public static Bitmap handlePixesEffectRelief(Bitmap bm) {
+        Bitmap bmp = Bitmap.createBitmap(bm.getWidth(), bm.getHeight(), Bitmap.Config.ARGB_8888);
+
+        // 像素点的个数就是图片的bitmap的宽度和高度
+        int widthPixes = bm.getWidth();
+        int heightPixes = bm.getHeight();
+
+        int[] oldPix = new int[widthPixes * heightPixes];
+        int[] newPix = new int[widthPixes * heightPixes];
+
+        bm.getPixels(oldPix,0, bm.getWidth(), 0, 0, bm.getWidth(), bm.getHeight());
+
+        int color;
+        int preColor;
+        int r, g, b, a, r1, g1, b1, r2, g2, b2;
+
+        for (int i = 1; i < oldPix.length; i++) {
+            color = oldPix[i];
+            r = Color.red(color);
+            g = Color.green(color);
+            b = Color.blue(color);
+            a = Color.alpha(color);
+
+            preColor = oldPix[i-1];
+            r1 = Color.red(preColor);
+            g1 = Color.green(preColor);
+            b1 = Color.blue(preColor);
+
+            r2 = r1 - r + 127;
+            g2 = g1 - g + 127;
+            b2 = b1 - b + 127;
+
+            if (r2 > 255) {
+                r2 = 255;
+            } else if (r2 < 0) {
+                r2 = 0;
+            }
+            if (g2 > 255) {
+                g2 = 255;
+            } else if (g2 < 0) {
+                g2 = 0;
+            }
+            if (b2 > 255) {
+                b2 = 255;
+            } else if (b2 < 0) {
+                b2 = 0;
+            }
+
+            newPix[i] = Color.argb(a, r2, g2, b2);
+        }
+        bmp.setPixels(newPix, 0, widthPixes, 0, 0, widthPixes, heightPixes);
         return bmp;
     }
 

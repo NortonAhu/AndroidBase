@@ -28,6 +28,7 @@ public class PixelsEffectActivity extends AppCompatActivity {
         originImg.setImageBitmap(bitmap);
         diseImg.setImageBitmap(ImageHelper.handleImageNegative(bitmap));
         oldImg.setImageBitmap(ImageHelper.handlePixesEffectOldPhoto(bitmap));
+        fudiaoImg.setImageBitmap(ImageHelper.handlePixesEffectRelief(bitmap));
     }
 
     private void initView() {
