@@ -139,7 +139,7 @@ ColorMatrix 其他的几个构造方法都是参数型的初始化这里不做�
      
   图片的效果如下:
   
-  <img src="/image\device-2016-04-19-222441.png" width="50%" height="50%">
+  <img src="/image\device-2016-04-19-222441.png" width="360px" height="720px">
    
         
         
